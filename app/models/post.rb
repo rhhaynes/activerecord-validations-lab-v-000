@@ -5,6 +5,6 @@ class Post < ActiveRecord::Base
   validates :category, :inclusion => {:in => ['Fiction', 'Non-Fiction']}
   
   def title_is_clickbaity
-    title.include?
+    title.any?{|word| %w().include?(word)}
   end
 end
