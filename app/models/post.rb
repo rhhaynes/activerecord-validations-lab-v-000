@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   
   def title_is_clickbait
     if !!title && [/Won't Believe/, /Secret/, /Top/, /Guess/].any?{|regexp| !!regexp.match(title)}
-      errors.add(:title, "title must be sufficiently clickbait-y")
+      errors.add(:title, "must be sufficiently clickbait-y")
     end
   end
 end
