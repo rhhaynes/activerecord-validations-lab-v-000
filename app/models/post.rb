@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   validates :summary, :length {:maximum => 250}
   validates :category, :inclusion => {:in => ['Fiction', 'Non-Fiction']}
   
-  def title_is_clickbaity
+  def title_is_clickbait
     title.any?{|word| %w().include?(word)}
   end
 end
